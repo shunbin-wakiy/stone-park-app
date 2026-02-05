@@ -1,5 +1,5 @@
 import { createServer } from "http";
-import { createApp } from "./app";
+import { createApp } from "../api/app";
 
 async function startServer() {
   const app = createApp();
