@@ -3,10 +3,7 @@
   "buildCommand": "pnpm build:vercel",
   "functions": {
     "api/index.ts": {
-      "includeFiles": [
-        "dist/public/**",
-        "api/**"
-      ]
+      "includeFiles": "dist/public/**"
     }
   },
   "routes": [
