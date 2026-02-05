@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "buildCommand": "pnpm build:vercel",
+  "functions": {
+    "api/index.ts": {
+      "runtime": "nodejs22.x"
+    }
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.ts"
+    }
+  ]
+}

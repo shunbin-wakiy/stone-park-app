@@ -1,0 +1,305 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* 
+ * Design System: Apple Human Interface Guidelines
+ * - Clean, minimal white/gray palette
+ * - SF Pro-like typography (Inter)
+ * - iOS system colors for accents
+ * - Frosted glass effects
+ * - Subtle shadows and depth
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* Custom gem colors */
+  --color-gem-amethyst: oklch(0.55 0.25 300);
+  --color-gem-ruby: oklch(0.55 0.25 25);
+  --color-gem-emerald: oklch(0.55 0.2 145);
+  --color-gem-sapphire: oklch(0.5 0.2 250);
+  --color-gem-diamond: oklch(0.9 0.02 250);
+}
+
+:root {
+  /* iOS System Colors */
+  --primary: oklch(0.55 0.2 250); /* System Blue #007AFF */
+  --primary-foreground: oklch(1 0 0);
+  --sidebar-primary: oklch(0.55 0.2 250);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  
+  /* Chart colors - gem themed */
+  --chart-1: oklch(0.55 0.25 300); /* Amethyst */
+  --chart-2: oklch(0.55 0.25 25);  /* Ruby */
+  --chart-3: oklch(0.55 0.2 145);  /* Emerald */
+  --chart-4: oklch(0.5 0.2 250);   /* Sapphire */
+  --chart-5: oklch(0.9 0.02 250);  /* Diamond */
+  
+  --radius: 0.75rem;
+  
+  /* Apple-style light theme */
+  --background: oklch(1 0 0); /* Pure white */
+  --foreground: oklch(0.13 0.01 285); /* #1D1D1F */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.13 0.01 285);
+  --popover: oklch(0.98 0 0 / 80%); /* Frosted glass */
+  --popover-foreground: oklch(0.13 0.01 285);
+  --secondary: oklch(0.96 0.002 285); /* #F5F5F7 */
+  --secondary-foreground: oklch(0.4 0.01 285);
+  --muted: oklch(0.96 0.002 285);
+  --muted-foreground: oklch(0.55 0.01 285); /* #86868B */
+  --accent: oklch(0.96 0.002 285);
+  --accent-foreground: oklch(0.13 0.01 285);
+  --destructive: oklch(0.6 0.25 25); /* System Red */
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.92 0.002 285);
+  --input: oklch(0.92 0.002 285);
+  --ring: oklch(0.55 0.2 250);
+  --sidebar: oklch(0.98 0.002 285);
+  --sidebar-foreground: oklch(0.13 0.01 285);
+  --sidebar-accent: oklch(0.96 0.002 285);
+  --sidebar-accent-foreground: oklch(0.13 0.01 285);
+  --sidebar-border: oklch(0.92 0.002 285);
+  --sidebar-ring: oklch(0.55 0.2 250);
+  
+  /* iOS System Colors */
+  --ios-blue: oklch(0.55 0.2 250);
+  --ios-green: oklch(0.6 0.2 145);
+  --ios-orange: oklch(0.7 0.2 60);
+  --ios-red: oklch(0.6 0.25 25);
+  --ios-purple: oklch(0.55 0.2 300);
+  --ios-gray: oklch(0.55 0.01 285);
+}
+
+.dark {
+  --primary: oklch(0.6 0.2 250);
+  --primary-foreground: oklch(1 0 0);
+  --sidebar-primary: oklch(0.6 0.2 250);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --background: oklch(0.13 0.01 285);
+  --foreground: oklch(0.95 0.005 285);
+  --card: oklch(0.18 0.01 285);
+  --card-foreground: oklch(0.95 0.005 285);
+  --popover: oklch(0.18 0.01 285 / 80%);
+  --popover-foreground: oklch(0.95 0.005 285);
+  --secondary: oklch(0.22 0.01 285);
+  --secondary-foreground: oklch(0.8 0.005 285);
+  --muted: oklch(0.25 0.01 285);
+  --muted-foreground: oklch(0.65 0.01 285);
+  --accent: oklch(0.25 0.01 285);
+  --accent-foreground: oklch(0.95 0.005 285);
+  --destructive: oklch(0.65 0.25 25);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.3 0.01 285);
+  --input: oklch(0.3 0.01 285);
+  --ring: oklch(0.6 0.2 250);
+  --chart-1: oklch(0.6 0.25 300);
+  --chart-2: oklch(0.6 0.25 25);
+  --chart-3: oklch(0.6 0.2 145);
+  --chart-4: oklch(0.55 0.2 250);
+  --chart-5: oklch(0.85 0.02 250);
+  --sidebar: oklch(0.18 0.01 285);
+  --sidebar-foreground: oklch(0.95 0.005 285);
+  --sidebar-accent: oklch(0.25 0.01 285);
+  --sidebar-accent-foreground: oklch(0.95 0.005 285);
+  --sidebar-border: oklch(0.3 0.01 285);
+  --sidebar-ring: oklch(0.6 0.2 250);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+  
+  /* iOS-style frosted glass effect */
+  .glass {
+    background: oklch(1 0 0 / 70%);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+  }
+  
+  /* iOS-style tab bar */
+  .tab-bar {
+    background: oklch(0.98 0.002 285 / 85%);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-top: 0.5px solid oklch(0 0 0 / 10%);
+  }
+  
+  /* iOS-style navigation bar */
+  .nav-bar {
+    background: oklch(0.98 0.002 285 / 85%);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 0.5px solid oklch(0 0 0 / 10%);
+  }
+  
+  /* Tap feedback animation */
+  .tap-feedback {
+    transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+  }
+  .tap-feedback:active {
+    transform: scale(0.97);
+    opacity: 0.8;
+  }
+  
+  /* Gem glow effect */
+  .gem-glow {
+    filter: drop-shadow(0 0 8px currentColor);
+  }
+  
+  /* Bottom sheet style */
+  .bottom-sheet {
+    border-radius: 1rem 1rem 0 0;
+    box-shadow: 0 -4px 20px oklch(0 0 0 / 10%);
+  }
+  
+  /* Map marker pulse animation */
+  @keyframes marker-pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.7;
+    }
+  }
+  
+  .marker-pulse {
+    animation: marker-pulse 2s ease-in-out infinite;
+  }
+  
+  /* Gem collect animation */
+  @keyframes gem-collect {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.5);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(0);
+      opacity: 0;
+    }
+  }
+  
+  .gem-collect {
+    animation: gem-collect 0.6s ease-out forwards;
+  }
+  
+  /* Success checkmark animation */
+  @keyframes success-pop {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .success-pop {
+    animation: success-pop 0.4s ease-out forwards;
+  }
+}
+
+/* Safe area insets for mobile */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top);
+  }
+}
