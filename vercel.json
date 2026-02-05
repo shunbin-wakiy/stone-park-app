@@ -3,7 +3,7 @@
   "buildCommand": "pnpm build:vercel",
   "functions": {
     "api/index.ts": {
-      "runtime": "nodejs22.x"
+      "runtime": "nodejs20.x"
     }
   },
   "routes": [
