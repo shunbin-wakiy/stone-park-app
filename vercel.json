@@ -1,6 +1,11 @@
 {
   "version": 2,
   "buildCommand": "pnpm build:vercel",
+  "functions": {
+    "api/index.ts": {
+      "includeFiles": "dist/public/**"
+    }
+  },
   "routes": [
     {
       "src": "/(.*)",
